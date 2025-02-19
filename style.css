@@ -42,7 +42,8 @@
 }
 
 .buttonlink {
-    height: 40px;
+    margin: 10px 0 10px 0;
+    height: auto;
 }
 
 
@@ -139,23 +140,12 @@ body {
     font-size: 14px;
 }
 
-@media (max-width: 600px) {
-    body {
-        overflow-x: hidden; 
-    }
-
-    .top {
-        flex-direction: column;
-        align-items: center;
-        width: calc(100% - 20px); 
-        margin: 10px auto; 
-    }
-
-    .lefttop, .righttop {
-        width: 90%; 
-        max-width: 90vw; 
-    }
+.item-top p {
+    padding-top: 20px;
+    text-align: justify;
 }
+
+
 
 /*MIDDLE PART*/
 .gridder {
@@ -216,4 +206,29 @@ body::after {
     z-index: 10; /* Make sure it floats above the content */
 }
 
+@media (max-width: 600px) {
+    body {
+        overflow-x: hidden; 
+    }
 
+
+    .top {
+        grid-template-columns: 300px;
+        align-items: center;
+        width: calc(100% - 20px); 
+        margin: 10px auto; 
+    }
+
+    .grid-box {
+        grid-template-columns: 300px;
+    }
+
+    .item {
+        height: auto;
+    }
+
+    .lefttop, .righttop {
+        width: 90%; 
+        max-width: 90vw; 
+    }
+}
