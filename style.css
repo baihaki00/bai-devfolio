@@ -1,0 +1,128 @@
+/* Global reset for margins, padding, borders */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-family: 'Courier New', monospace;
+    user-select: none;
+}
+
+:root {
+    --darkgrey: #181818;
+    --mediumgrey: #2d2d2d;
+    --customwhite: #F7F7F7;
+    --kibatextbubble: #2d2d2d;
+    --usertextbubble: #5ce1e6;
+    --scrollbarthumb: #2d2d2d;
+}
+
+
+.icon {
+    display:contents;
+}
+
+body {
+    background-color: var(--darkgrey);
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.linkedin-icon svg {
+    transition: fill 0.2s ease-in-out;
+}
+
+.linkedin-icon:hover svg {
+    fill: #cfcfcf; /* LinkedIn blue */
+}
+
+.github-icon svg {
+    transition: fill 0.2s ease-in-out;
+}
+
+.github-icon:hover svg {
+    fill: #cfcfcf; /* LinkedIn blue */
+}
+
+.nav {
+    height: 30px;
+    display: flex;
+    background-color: var(--mediumgrey);
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    color: var(--customwhite)
+}
+
+.rightnavbar {
+    width: 25%;
+    text-align: right;
+    
+}
+
+.leftnavbar {
+    width: 25%;
+}
+
+.middlenavbar {
+    width: 50%;
+    text-align: center;
+}
+
+.title {
+    padding: 100px;
+    color: var(--customwhite);
+    text-align: center;
+}
+
+.namename {
+    letter-spacing: 10px;
+}
+
+.top {
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+
+.lefttop {
+    width: 40%;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    background-color: var(--mediumgrey);
+    color: var(--customwhite)
+}
+
+
+.righttop {
+    width: 60%;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    background-color: var(--mediumgrey);
+    color: var(--customwhite)
+}
+
+@media (max-width: 600px) {
+    body {
+        overflow-x: hidden; /* Prevent scrolling */
+    }
+
+    .top {
+        flex-direction: column;
+        align-items: center;
+        width: calc(100% - 20px); /* Prevents overflow */
+        margin: 10px auto; /* Keeps spacing but no overflow */
+    }
+
+    .lefttop, .righttop {
+        width: 90%; /* Ensure it doesn't exceed viewport */
+        max-width: 90vw; /* Hard limit to avoid overflow */
+    }
+}
+
