@@ -8,6 +8,48 @@
     user-select: none;
 }
 
+/*buttons*/
+.button-blue {
+    background-color: var(--usertextbubble);
+    cursor: pointer;
+    border-radius: 15px;
+    margin-top: 10px;
+    padding: 5px 15px;
+    font-size: 14px;
+    transition: 0.2s ease-in-out;
+    text-decoration: none; /* Removes the underline */
+    color: var(--darkgrey);
+    display: inline-block; /* Ensures it behaves like a button */
+}
+
+/*imageproject*/
+.imageproject {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.item-desc {
+    min-height: 100px;
+}
+
+.item-desc h2 {
+    margin: 10px 0 10px 0;
+}
+
+.item-desc p {
+    text-align: justify;
+}
+
+.buttonlink {
+    height: 40px;
+}
+
+
+.button-blue:hover {
+    background-color: #4ab4b8;
+}
+
 :root {
     --darkgrey: #181818;
     --mediumgrey: #2d2d2d;
@@ -24,7 +66,6 @@
 
 body {
     background-color: var(--darkgrey);
-    overflow-x: hidden;
     width: 100%;
 }
 
@@ -71,6 +112,7 @@ body {
 
 .title {
     padding: 100px;
+    padding-bottom: 50px !important;
     color: var(--customwhite);
     text-align: center;
 }
@@ -80,49 +122,98 @@ body {
 }
 
 .top {
-    width: 100%;
-    padding-top: 20px;
-    display: flex;
-    flex-direction: row;
-    column-gap: 10px;
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    align-items: stretch;
+    text-align: center;
+    gap: 10px;
 }
 
-.lefttop {
-    width: 40%;
-    padding: 10px;
+.item-top {
+    background-color: var(--usertextbubble);
     border-radius: 15px;
     margin-bottom: 10px;
+    padding: 15px;
     font-size: 14px;
-    background-color: var(--mediumgrey);
-    color: var(--customwhite)
-}
-
-
-.righttop {
-    width: 60%;
-    padding: 10px;
-    border-radius: 15px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    background-color: var(--mediumgrey);
-    color: var(--customwhite)
 }
 
 @media (max-width: 600px) {
     body {
-        overflow-x: hidden; /* Prevent scrolling */
+        overflow-x: hidden; 
     }
 
     .top {
         flex-direction: column;
         align-items: center;
-        width: calc(100% - 20px); /* Prevents overflow */
-        margin: 10px auto; /* Keeps spacing but no overflow */
+        width: calc(100% - 20px); 
+        margin: 10px auto; 
     }
 
     .lefttop, .righttop {
-        width: 90%; /* Ensure it doesn't exceed viewport */
-        max-width: 90vw; /* Hard limit to avoid overflow */
+        width: 90%; 
+        max-width: 90vw; 
     }
 }
+
+/*MIDDLE PART*/
+.gridder {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically (if needed) */
+    width: 100%;
+}
+
+
+.grid-box {
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-template-rows: auto auto;
+    gap: 10px 10px;
+}
+
+.item {
+    border-radius: 15px;
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: 14px;
+    background-color: var(--mediumgrey);
+    color: var(--customwhite);
+}
+
+
+/*scrollbar*/
+/* Initially hide the scrollbar thumb */
+body::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Make the thumb invisible initially */
+    border-radius: 4px;
+}
+
+/* Show the scrollbar thumb on hover */
+body:hover::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbarthumb); /* Thumb color */
+}
+
+/* Custom scrollbar track */
+body::-webkit-scrollbar {
+    width: 8px; /* Scrollbar width */
+}
+
+.text-box::-webkit-scrollbar-track {    
+    background-color: var(--darkgrey); /* Scrollbar track color */
+}
+
+/* Add a pseudo-element for the scrollbar to float above content */
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px; /* Scrollbar width */
+    height: 100%;
+    background-color: transparent;
+    z-index: 10; /* Make sure it floats above the content */
+}
+
 
