@@ -8,43 +8,6 @@
     user-select: none;
 }
 
-/*gradient text ini boss*/
-h1.gradient-text {
-    font-size: clamp(1rem, 6vw + 1rem, 5rem);
-    line-height: 1.3;
-    text-align: center;
-    text-transform: uppercase;
-  
-    background-image: linear-gradient(
-        to right,
-        #5ce1e6,  /* Base color */
-        #4ac9cd,  /* Slightly darker */
-        #66e7eb,  /* Slightly lighter */
-        #3fb3b7,  /* More saturation */
-        #2d8e91,  /* Darker shade */
-        #1a6769,  /* Even darker */
-        #5ce1e6,  /* Back to base */
-        #66e7eb,  /* Lighter tone */
-        #5ce1e6   /* Slightly darker again */
-    );
-      
-  
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  
-    --bg-size: 200%;
-    background-size: var(--bg-size);
-    animation: animate 8s linear infinite;
-  }
-  
-  @keyframes animate {
-    to {
-      background-position: var(--bg-size);
-    }
-  }
-  
-
 /*buttons*/
 .button-blue {
     background-color: var(--usertextbubble);
@@ -156,7 +119,7 @@ body {
 }
 
 .contactme {
-    margin-top: 10px;
+    margin-top: 10px ;
     text-align: center;
     display: flex;
     flex-direction: column;
